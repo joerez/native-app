@@ -7,6 +7,12 @@ import {
 
 
 class HomeScreen extends React.Component {
+
+  static navigationOptions = {
+  title: 'PIG',
+};
+
+
   render() {
     return (
 
@@ -27,6 +33,7 @@ class HomeScreen extends React.Component {
             onPress={() => this.props.navigation.navigate('Details')}
           />
         </View>
+        <Text style={styles.subText}>By: Joe Rezendes</Text>
       </View>
     );
   }
@@ -97,6 +104,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'center',
-    borderRadius: 8
-  }
+    borderRadius: 8,
+  },
+  subText: {
+    position: 'absolute',
+    bottom: 30
+  },
 });
