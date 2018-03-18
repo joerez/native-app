@@ -9,7 +9,23 @@ import {
 class HomeScreen extends React.Component {
 
   static navigationOptions = {
-  title: 'PIG',
+    title: 'PIG GAME',
+    headerStyle: {
+    backgroundColor: '#fd79a8',
+  },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 30
+  },
+    headerRight: (
+    <Button
+      onPress={() => alert('This is a button!')}
+      title="Info"
+      color="#fff"
+    />
+  ),
+
 };
 
 
@@ -40,20 +56,52 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
+
+  static navigationOptions = {
+    title: 'PIG GAME',
+    headerStyle: {
+    backgroundColor: '#fd79a8',
+  },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 30
+  },
+    headerRight: (
+    <Button
+      onPress={() => alert('This is a button!')}
+      title="Info"
+      color="#fff"
+    />
+  ),
+
+};
+
+
+
   render() {
     return (
+      <View style={styles.DetailsScreen}>
+        <View style={styles.player1}>
+          <Text>Player 1</Text>
 
-      <View style={{ flex: 1 }}>
-        <Text>Details Screen</Text>
-        <Button
-          title="Go to Details... again"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
+          <Text>Total Score</Text>
+
+          <Text>Current Score</Text>
+
+        </View>
+        <View style={styles.player2}>
+          <Text>Player 2</Text>
+
+          <Text>Total Score</Text>
+
+          <Text>Current Score</Text>
+
+
+        </View>
+
       </View>
+
     );
   }
 }
@@ -110,4 +158,26 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 30
   },
+  DetailsScreen: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start'
+  },
+  player1: {
+    width: '50%',
+    backgroundColor: 'pink',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  player2: {
+    width: '50%',
+    backgroundColor: '#fab1a0',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  }
 });
