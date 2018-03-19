@@ -84,22 +84,40 @@ class DetailsScreen extends React.Component {
       <View style={styles.DetailsScreen}>
         <View style={styles.player1}>
           <Text style={styles.playerName}>Player 1</Text>
-
+          <View style={styles.totalScore}>
+            <Text>30</Text>
+          </View>
           <Text>Total Score</Text>
-
+          <View style={styles.currentScore}>
+            <Text>22</Text>
+          </View>
           <Text>Current Score</Text>
 
         </View>
         <View style={styles.player2}>
           <Text style={styles.playerName}>Player 2</Text>
-
+          <View style={styles.totalScore}>
+            <Text>33</Text>
+          </View>
           <Text>Total Score</Text>
-
+          <View style={styles.currentScore}>
+            <Text>12</Text>
+          </View>
           <Text>Current Score</Text>
 
 
         </View>
-        <View style={styles.dice}></View>
+
+        <Image
+          style={styles.dice}
+          source={{ uri: 'https://image.ibb.co/j5oCXx/6.png' }}
+        />
+
+
+        <View style={styles.roll}><Text>Roll Dice</Text></View>
+        <View style={styles.hold}><Text>Hold</Text></View>
+
+
       </View>
 
     );
@@ -182,7 +200,7 @@ const styles = StyleSheet.create({
   },
   dice: {
     position: 'absolute',
-    top: '50%',
+    top: '40%',
     left: '38%',
     backgroundColor: 'white',
     height: 100,
@@ -190,5 +208,47 @@ const styles = StyleSheet.create({
   },
   playerName: {
     fontSize: 30
+  },
+  totalScore: {
+    backgroundColor: '#ff9ff3',
+    height: 100,
+    width: 100,
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  currentScore: {
+    backgroundColor: '#ff6b6b',
+    height: 100,
+    width: 100,
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  roll: {
+    position: 'absolute',
+    top: '70%',
+    left: '43%',
+    backgroundColor: '#eee',
+    width: 70,
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 4
+  },
+  hold: {
+    position: 'absolute',
+    top: '80%',
+    left: '43%',
+    backgroundColor: '#eee',
+    height: 50,
+    width: 70,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 4
   }
 });
