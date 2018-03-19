@@ -20,7 +20,7 @@ class HomeScreen extends React.Component {
   },
     headerRight: (
     <Button
-      onPress={() => alert('This is a button!')}
+      onPress={() => alert('This Will Display The Rules Soon.')}
       title="Info"
       color="#fff"
     />
@@ -69,7 +69,7 @@ class DetailsScreen extends React.Component {
   },
     headerRight: (
     <Button
-      onPress={() => alert('This is a button!')}
+      onPress={() => alert('This Will Display The Rules Soon.')}
       title="Info"
       color="#fff"
     />
@@ -77,8 +77,17 @@ class DetailsScreen extends React.Component {
 
 };
 
+constructor(props) {
+  super(props);
+  this.state = {
+    dice: 3
+  };
+}
 
-
+  changeDice(number){
+    console.log(number, this.state.dice)
+    this.setState({dice: number})
+  }
   render() {
     return (
       <View style={styles.DetailsScreen}>
@@ -112,11 +121,11 @@ class DetailsScreen extends React.Component {
         </View>
 
 
-        <Die number={Math.floor(Math.random() * 6)} />
+        <Die number={this.state.dice} />
 
 
 
-        <View style={styles.roll}><Text>Roll Dice</Text></View>
+        <View onPress={() => this.changeDice(Math.floor(Math.random() * 6))} style={styles.roll}><Text>Roll Dice</Text></View>
         <View style={styles.hold}><Text>Hold</Text></View>
 
 
