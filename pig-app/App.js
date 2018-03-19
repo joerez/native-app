@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Image, resizeMode } from 'react-native'
 import {
   StackNavigator,
 } from 'react-navigation';
-
+import Die from './Die';
 
 
 class HomeScreen extends React.Component {
@@ -86,32 +86,34 @@ class DetailsScreen extends React.Component {
           <Text style={styles.playerName}>Player 1</Text>
           <View style={styles.totalScore}>
             <Text>30</Text>
+            <Text>Total Score</Text>
           </View>
-          <Text>Total Score</Text>
           <View style={styles.currentScore}>
             <Text>22</Text>
+            <Text>Current Score</Text>
+
           </View>
-          <Text>Current Score</Text>
 
         </View>
         <View style={styles.player2}>
           <Text style={styles.playerName}>Player 2</Text>
           <View style={styles.totalScore}>
             <Text>33</Text>
+            <Text>Total Score</Text>
+
           </View>
-          <Text>Total Score</Text>
           <View style={styles.currentScore}>
             <Text>12</Text>
+            <Text>Current Score</Text>
+
           </View>
-          <Text>Current Score</Text>
 
 
         </View>
 
-        <Image
-          style={styles.dice}
-          source={{ uri: 'https://image.ibb.co/j5oCXx/6.png' }}
-        />
+
+        <Die number={Math.floor(Math.random() * 6)} />
+
 
 
         <View style={styles.roll}><Text>Roll Dice</Text></View>
@@ -122,6 +124,10 @@ class DetailsScreen extends React.Component {
 
     );
   }
+}
+
+function random(n) {
+  return Math.floor(Math.random() * n)
 }
 
 
@@ -187,7 +193,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center'
   },
   player2: {
@@ -195,16 +201,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fab1a0',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center'
-  },
-  dice: {
-    position: 'absolute',
-    top: '40%',
-    left: '38%',
-    backgroundColor: 'white',
-    height: 100,
-    width: 100
   },
   playerName: {
     fontSize: 30
@@ -216,7 +214,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 200
   },
   currentScore: {
     backgroundColor: '#ff6b6b',
@@ -225,7 +224,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 100
   },
   roll: {
     position: 'absolute',
