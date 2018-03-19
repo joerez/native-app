@@ -83,7 +83,7 @@ class DetailsScreen extends React.Component {
     return (
       <View style={styles.DetailsScreen}>
         <View style={styles.player1}>
-          <Text>Player 1</Text>
+          <Text style={styles.playerName}>Player 1</Text>
 
           <Text>Total Score</Text>
 
@@ -91,7 +91,7 @@ class DetailsScreen extends React.Component {
 
         </View>
         <View style={styles.player2}>
-          <Text>Player 2</Text>
+          <Text style={styles.playerName}>Player 2</Text>
 
           <Text>Total Score</Text>
 
@@ -99,7 +99,7 @@ class DetailsScreen extends React.Component {
 
 
         </View>
-
+        <View style={styles.dice}></View>
       </View>
 
     );
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center'
   },
   player2: {
@@ -177,7 +177,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fab1a0',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center'
+  },
+  dice: {
+    position: 'absolute',
+    top: '50%',
+    left: '38%',
+    backgroundColor: 'white',
+    height: 100,
+    width: 100
+  },
+  playerName: {
+    fontSize: 30
   }
 });
