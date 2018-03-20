@@ -125,7 +125,7 @@ constructor(props) {
 
 
 
-        <View onPress={() => this.changeDice(Math.floor(Math.random() * 6))} style={styles.roll}><Text>Roll Dice</Text></View>
+        <View style={styles.roll}><Button title="Roll Dice" onPress={() => this.changeDice(Math.floor(Math.random() * 6))}></Button></View>
         <View style={styles.hold}><Text>Hold</Text></View>
 
 
