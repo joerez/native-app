@@ -85,7 +85,7 @@ constructor(props) {
 }
 
   changeDice(number){
-    console.log(number, this.state.dice)
+    // console.log(number, this.state.dice)
     this.setState({dice: number})
   }
   render() {
@@ -94,11 +94,11 @@ constructor(props) {
         <View style={styles.player1}>
           <Text style={styles.playerName}>Player 1</Text>
           <View style={styles.totalScore}>
-            <Text>30</Text>
+            <Text style={styles.number}>30</Text>
             <Text>Total Score</Text>
           </View>
           <View style={styles.currentScore}>
-            <Text>22</Text>
+            <Text style={styles.number}>22</Text>
             <Text>Current Score</Text>
 
           </View>
@@ -107,12 +107,12 @@ constructor(props) {
         <View style={styles.player2}>
           <Text style={styles.playerName}>Player 2</Text>
           <View style={styles.totalScore}>
-            <Text>33</Text>
+            <Text style={styles.number}>33</Text>
             <Text>Total Score</Text>
 
           </View>
           <View style={styles.currentScore}>
-            <Text>12</Text>
+            <Text style={styles.number}>12</Text>
             <Text>Current Score</Text>
 
           </View>
@@ -259,5 +259,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4
-  }
+  },
+  number: {
+    marginTop: 20,
+    fontSize: 30,
+    marginBottom: 10
+  },
 });
