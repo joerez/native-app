@@ -80,7 +80,8 @@ class DetailsScreen extends React.Component {
 constructor(props) {
   super(props);
   this.state = {
-    dice: 3
+    dice: 3,
+    player: 1,
   };
 }
 
@@ -88,6 +89,11 @@ constructor(props) {
     // console.log(number, this.state.dice)
     this.setState({dice: number})
   }
+
+  hold(){
+    this.setState({player: 0 ? 1 + 1 : 0 + 1})
+  }
+
   render() {
     return (
       <View style={styles.DetailsScreen}>
@@ -114,7 +120,7 @@ constructor(props) {
           <View style={styles.currentScore}>
             <Text style={styles.number}>12</Text>
             <Text>Current Score</Text>
-
+            <Text>{this.state.player}</Text>
           </View>
 
 
@@ -126,7 +132,7 @@ constructor(props) {
 
 
         <View style={styles.roll}><Button title="Roll Dice" onPress={() => this.changeDice(Math.floor(Math.random() * 6))}></Button></View>
-        <View style={styles.hold}><Text>Hold</Text></View>
+        <View style={styles.hold}><Button title="Hold" onPress={() => this.hold()}></Button></View>
 
 
       </View>
